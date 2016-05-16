@@ -4,25 +4,26 @@ using Xamarin.Forms;
 
 namespace XamTest
 {
-	public class App : Application
+	public partial class App : Application
 	{
-		public App ()
+		public App()
 		{
+			InitializeComponent();
 			// The root page of your application
 			MainPage = new MyRootPage();
 		}
 
-		protected override void OnStart ()
+		protected override void OnStart()
 		{
 			// Handle when your app starts
 		}
 
-		protected override void OnSleep ()
+		protected override void OnSleep()
 		{
 			// Handle when your app sleeps
 		}
 
-		protected override void OnResume ()
+		protected override void OnResume()
 		{
 			// Handle when your app resumes
 		}

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamTest.MyPage" Title="myTitle">
 
 	<!-- Styles -->
@@ -17,7 +17,7 @@
 	<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="200" Spacing="10">
 		<Label Text="Enter your name" Style="{StaticResource LabelStyle}" Margin="40,0,0,0"/>
 		<Entry Text="" Placeholder="Your name" x:Name="nameEntry"/>
-		<Button Text="Next" Clicked="OnButtonClicked"/>
+		<Button Style="{StaticResource myButtonStyle}" Text="Next" Clicked="OnButtonClicked"/>
 	</StackLayout>
 
 	</ContentPage.Content>
