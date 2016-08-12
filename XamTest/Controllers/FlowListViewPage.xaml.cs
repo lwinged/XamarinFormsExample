@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 
@@ -34,15 +35,29 @@ namespace XamTest
 				new Person { Age = 45, Name = "t66"},
 				new Person { Age = 55, Name = "tes"},
 				new Person { Age = 51, Name = "t6u"},
+				new Person { Age = 55, Name = "tes"},
+				new Person { Age = 51, Name = "t6u"},
+				new Person { Age = 52, Name = "test"},
+				new Person { Age = 45, Name = "t66"},
+				new Person { Age = 55, Name = "tes"},
+				new Person { Age = 51, Name = "t6u"},
+				new Person { Age = 52, Name = "test"},
+				new Person { Age = 45, Name = "t66"},
+				new Person { Age = 55, Name = "tes"},
+				new Person { Age = 51, Name = "t6u"},
+				new Person { Age = 52, Name = "test"},
+				new Person { Age = 45, Name = "t66"},
+				new Person { Age = 55, Name = "tes"},
+				new Person { Age = 51, Name = "t6u"},
 			};
 
 			var columnsTemplates = new List<FlowColumnTemplateSelector>();
 			columnsTemplates.Add(new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) });
 			columnsTemplates.Add(new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) });
 
-
 			flView.FlowColumnsTemplates = columnsTemplates;
 			flView.FlowItemsSource = list;
+			list[list.Count - 1].ButtonClicked += OnClickedInView;
 
 			var i = 0;
 			flView.FlowItemTapped += (sender, e) =>
@@ -66,6 +81,14 @@ namespace XamTest
 
 			};
 
+		}
+
+
+		void OnClickedInView(object sender, EventArgs args) {
+			var person = sender as Person;
+			person.Age = 200;
+			flView.ForceReload();
+			Debug.WriteLine("click IN PAge");
 		}
 	}
 }

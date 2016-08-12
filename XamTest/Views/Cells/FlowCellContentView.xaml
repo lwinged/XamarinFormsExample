@@ -4,6 +4,7 @@
 	<ContentView.Content>
 		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
 			<Label Text="{Binding Name}"/>
+			<Button Text="Action" Clicked="OnClickedInView"/>
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>
