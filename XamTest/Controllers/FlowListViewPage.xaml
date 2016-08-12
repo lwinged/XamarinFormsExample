@@ -6,7 +6,7 @@
 		xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" 
 		x:Class="XamTest.FlowListViewPage">
 	<ContentPage.Content>
-		<flv:FlowListView x:Name="flView" HasUnevenRows="true" FlowColumnExpand="ProportionalLast">    
+		<flv:FlowListView x:Name="flView" HasUnevenRows="true">    
 		</flv:FlowListView>
 	</ContentPage.Content>
 </ContentPage>

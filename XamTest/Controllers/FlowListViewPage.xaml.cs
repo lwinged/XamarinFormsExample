@@ -47,7 +47,7 @@ namespace XamTest
 			var i = 0;
 			flView.FlowItemTapped += (sender, e) =>
 			{
-				var items = ((FlowListView)sender);
+				//var items = ((FlowListView)sender);
 				var person = e.Item as Person;
 
 				if (i % 2 == 0)
