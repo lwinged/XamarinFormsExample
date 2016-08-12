@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:views="clr-namespace:XamTest;assembly=XamTest"
+		xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" 
+		x:Class="XamTest.FlowListViewPage">
+	<ContentPage.Content>
+		<flv:FlowListView x:Name="flView" HasUnevenRows="true" FlowColumnExpand="ProportionalLast">    
+		</flv:FlowListView>
+	</ContentPage.Content>
+</ContentPage>

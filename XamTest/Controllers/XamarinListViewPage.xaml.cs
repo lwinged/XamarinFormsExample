@@ -17,7 +17,7 @@ namespace XamTest
 				new Person { Age = 2, Name = "test"},
 				new Person { Age = 4, Name = "t66"},
 				new Person { Age = 3, Name = "tes"},
-				new Person { Age = 1, Name = "t6u"},
+				new Person { Age = 1, Name = "t6u"}
 			};
 
 			mylistview.ItemsSource = list;
@@ -38,6 +38,7 @@ namespace XamTest
 				mylistview.ItemTemplate = new DataTemplate(typeof(XamarinCell));
 			};
 				
+
 		}
 	}
 }
