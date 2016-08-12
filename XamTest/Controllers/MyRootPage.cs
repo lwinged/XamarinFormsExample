@@ -14,7 +14,7 @@ namespace XamTest
 			masterPage.ListView.ItemSelected += OnItemSelected;
 
 			Master = masterPage;
-			Detail = new NavigationPage(new MyPage ());
+			Detail = new NavigationPage(new XamarinListViewPage ());
 		}
 
 		void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
