@@ -1,9 +1,10 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace XamTest
 {
 	
-	public class Person
+	public class Person : BindableObject
 	{
 		public delegate void MediaEventHandler(object sender, EventArgs args);
 

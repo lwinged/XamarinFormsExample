@@ -1,38 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 
 namespace XamTest
 {
 	public partial class FlowCellContentView : ContentView
 	{
-		Person _viewModel;
-
 		public FlowCellContentView()
 		{
 			InitializeComponent();
 		}
 
-		void OnClickedInView(object sender, EventArgs e)
+		public void OnTapped()
 		{
-			Debug.WriteLine("CLICK IN VIEW");
 
-			_viewModel.DoMyAction();
 		}
 
-		protected override void OnBindingContextChanged()
-		{
-			base.OnBindingContextChanged();
+		//protected override void OnBindingContextChanged()
+		//{
+		//	base.OnBindingContextChanged();
 
 
-			 _viewModel = BindingContext as Person;
+		//	 _viewModel = BindingContext as Person;
 
-			if (_viewModel != null)
-			{
-			
-			}
-		}
+		//	if (_viewModel != null)
+		//	{
+
+		//	}
+		//}
 	}
 }
 

@@ -11,85 +11,50 @@ namespace XamTest
 		public FlowListViewPage()
 		{
 			InitializeComponent();
+			FlowListView.Init();
 
 			var lorem = "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de";
 
 			var list = new List<Person>() {
 				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
-				new Person { Age = 55, Name = "tes"},
-				new Person { Age = 51, Name = "t6u"},
-				new Person { Age = 52, Name = "test"},
-				new Person { Age = 45, Name = "t66"},
+				new Person { Age = 45, Name = lorem},
+				new Person { Age = 45, Name = lorem},
 				new Person { Age = 55, Name = "tes"},
 				new Person { Age = 51, Name = "t6u"},
 			};
 
-			var columnsTemplates = new List<FlowColumnTemplateSelector>();
-			columnsTemplates.Add(new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) });
-			columnsTemplates.Add(new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) });
 
-			flView.FlowColumnsTemplates = columnsTemplates;
-			flView.FlowItemsSource = list;
-			list[list.Count - 1].ButtonClicked += OnClickedInView;
-
-			var i = 0;
-			flView.FlowItemTapped += (sender, e) =>
+			var flView = new FlowListView()
 			{
-				//var items = ((FlowListView)sender);
-				var person = e.Item as Person;
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				SeparatorVisibility = SeparatorVisibility.None,
+				HasUnevenRows = true,
+				FlowColumnsTemplates = new List<FlowColumnTemplateSelector>() {
+					// First column definition:
+					new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) },
+					//new FlowColumnSimpleTemplateSelector() { ViewType = typeof(FlowCellContentView) },
 
-				if (i % 2 == 0)
-				{
-					person.Name = lorem;
-					person.Age = 150;
-				}
-				else {
-					person.Name = "toto";
-					person.Age = 50;
-				}
 
-				++i;
-				//flView.ItemTemplate = new DataTemplate(() => new FlowListViewInternalCell(new WeakReference<FlowListView>(flView)));
-				flView.ForceReload();
-
+				},
 			};
 
-		}
+			//flView.ItemTemplate = new DataTemplate(typeof(XamarinCell));
 
 
-		void OnClickedInView(object sender, EventArgs args) {
-			var person = sender as Person;
-			person.Age = 200;
-			flView.ForceReload();
-			Debug.WriteLine("click IN PAge");
+			//var columnsTemplates = new List<FlowColumnTemplateSelector>();
+			////var f = new FlowColumnFuncTemplateSelector(new Func<object, Type>((bindingContext) => typeof(MyFlowCell)));
+
+			//columnsTemplates.Add(new FlowColumnSimpleTemplateSelector() { ViewType = typeof(MyFlowCell) });
+
+			//flView.HasUnevenRows = true;
+			//flView.RowHeight = -1;
+			//flView.FlowColumnsTemplates = columnsTemplates;
+			flView.FlowItemsSource = list;
+
+			Content = flView;
 		}
+
 	}
 }
 

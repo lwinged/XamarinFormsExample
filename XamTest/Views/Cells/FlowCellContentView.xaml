@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamTest.FlowCellContentView"
-		HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="{Binding Age}">
+		HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 	<ContentView.Content>
-		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
-			<Label Text="{Binding Name}"/>
-			<Button Text="Action" Clicked="OnClickedInView"/>
+		<StackLayout BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

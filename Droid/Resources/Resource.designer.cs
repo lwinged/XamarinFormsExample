@@ -26,6 +26,8 @@ namespace XamTest.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLStorage.Resource.String.ApplicationName = global::XamTest.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::XamTest.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::XamTest.Droid.Resource.Attribute.actionBarSize;
 		}
 		

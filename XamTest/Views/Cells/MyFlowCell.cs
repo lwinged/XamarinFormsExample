@@ -1,13 +1,14 @@
 ﻿using System;
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 
 namespace XamTest
 {
-	public class MyFlowCell : ViewCell
+	public class MyFlowCell : FlowViewCell
 	{
 		public MyFlowCell()
 		{
-			View = new FlowCellContentView();
+			Content = new FlowCellContentView();
 		}
 	}
 }

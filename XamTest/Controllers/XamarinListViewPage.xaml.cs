@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace XamTest
@@ -14,8 +14,8 @@ namespace XamTest
 			var lorem = "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de";
 
 			var list = new List<Person>() {
-				new Person { Age = 2, Name = "test"},
-				new Person { Age = 4, Name = "t66"},
+				new Person { Age = 2, Name = lorem},
+				new Person { Age = 4, Name = lorem},
 				new Person { Age = 3, Name = "tes"},
 				new Person { Age = 1, Name = "t6u"}
 			};
@@ -34,10 +34,10 @@ namespace XamTest
 
 				++i;
 
-				//mylistview.ItemsSource = list;
-				mylistview.ItemTemplate = new DataTemplate(typeof(XamarinCell));
+
+				//mylistview.ItemTemplate = new DataTemplate(typeof(XamarinCell));
+
 			};
-				
 
 		}
 	}
