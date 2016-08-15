@@ -5,10 +5,12 @@
 				
 			<StackLayout BackgroundColor="Blue">
 				<Label Text="{Binding Name}"/>
+				<Button Text="action" TextColor="Red"/>
 			</StackLayout>
 
 			<StackLayout BackgroundColor="Red">
 				<Label Text="{Binding Name}"/>
+				<Button Text="action" TextColor="Blue"/>
 			</StackLayout>
 
 			
