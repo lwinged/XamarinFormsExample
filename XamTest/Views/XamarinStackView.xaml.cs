@@ -6,9 +6,10 @@ namespace XamTest
 {
 	public partial class XamarinStackView : StackLayout
 	{
-		public XamarinStackView()
+		public XamarinStackView(Person p)
 		{
 			InitializeComponent();
+			BindingContext = p;
 			btn.BackgroundColor = Color.Fuchsia;
 		}
 	}

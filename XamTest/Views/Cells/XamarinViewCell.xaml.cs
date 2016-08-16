@@ -10,9 +10,21 @@ namespace XamTest
 		{
 			InitializeComponent();
 
-			rootStack.Children.Add(new XamarinStackView());
-			rootStack.Children.Add(new XamarinStackView());
+
+		}
+	
+		protected override void OnBindingContextChanged()
+		{
+			base.OnBindingContextChanged();
+
+			var vm = BindingContext as PersonViewModel;
+			if (vm != null) {
+
+				rootStack.Children.Add(new XamarinStackView(vm.PersonList[0]));
+				rootStack.Children.Add(new XamarinStackView(vm.PersonList[1]));
+			}
 		}
 	}
+
 }
 

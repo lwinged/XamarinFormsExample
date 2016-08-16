@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace XamTest
@@ -6,15 +7,36 @@ namespace XamTest
 	public class PersonViewModel : INotifyPropertyChanged
 	{
 
+		List<Person> _list;
 		string currentText;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public PersonViewModel()
+		public PersonViewModel(List<Person> list)
 		{
-			currentText = "my current text";
+			_list = list;
 		}
 
+		public List<Person> PersonList
+		{
+			set
+			{
+				if (_list != value)
+				{
+					_list = value;
+
+					if (PropertyChanged != null)
+					{
+						PropertyChanged(this,
+							new PropertyChangedEventArgs("PersonList"));
+					}
+				}
+			}
+			get
+			{
+				return _list;
+			}
+		}
 
 		public string CurrentText
 		{
