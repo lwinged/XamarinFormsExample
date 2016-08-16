@@ -7,6 +7,8 @@ namespace XamTest
 {
 	public partial class XamarinListViewPage : ContentPage
 	{
+		private ObservableCollection<PersonViewModel> _rows = null;
+
 		public XamarinListViewPage()
 		{
 			InitializeComponent();
@@ -22,20 +24,41 @@ namespace XamTest
 
 			//prepare view Model
 
-			mylistview.ItemsSource = list;
+		//var viewmodels = new List<PersonViewModel>() {
+		//		new PersonViewModel {CurrentText = "My current text first"},
+		//		new PersonViewModel {CurrentText = "My current text second"},
+		//	};
+
+			_rows = new ObservableCollection<PersonViewModel>() { 
+				new PersonViewModel {CurrentText = "My current text first"},
+				new PersonViewModel {CurrentText = "My current text second"},
+			};
+
+			mylistview.ItemsSource = _rows;
 			mylistview.ItemTemplate = new DataTemplate(typeof(XamarinViewCell));
 
 			var i = 0;
 			mylistview.ItemTapped += (sender, e) => {
-				var person = e.Item as Person;
+				var vm = e.Item as PersonViewModel;
 
+				if (vm != null)
+				{
+					var index = _rows.IndexOf(vm);
 
-				if (i % 2 == 0)
-					person.Name = lorem;
-				else
-					person.Name = "toto";
+					if (i % 2 == 0)
+						_rows[index] = new PersonViewModel { CurrentText = lorem };
+					else 
+						_rows[index] = new PersonViewModel { CurrentText = "My current text" };
+			
+					++i;
+				}
 
-				++i;
+				//if (i % 2 == 0)
+				//	person.Name = lorem;
+				//else
+				//	person.Name = "toto";
+
+				//++i;
 
 				//list[3] = new Person { Age = person.Age, Name = person.Name};
 				//mylistview.ItemsSource = list;

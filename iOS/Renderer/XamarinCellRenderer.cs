@@ -5,7 +5,7 @@
 //using XamTest;
 //using XamTest.iOS;
 
-//[assembly: ExportRenderer(typeof(XamarinCell), typeof(XamarinCellRenderer))]
+//[assembly: ExportRenderer(typeof(XamarinViewCell), typeof(XamarinCellRenderer))]
 //namespace XamTest.iOS
 //{
 //	public class XamarinCellRenderer : ViewCellRenderer

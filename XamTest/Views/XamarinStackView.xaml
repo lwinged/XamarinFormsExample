@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout 
+<StackLayout
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="XamTest.XamarinStackView">
-	<Label Text="{Binding Name}"/>
+		x:Class="XamTest.XamarinStackView"
+		>
+	<Label Text="{Binding CurrentText}"/>
 	<Button x:Name="btn" Text="action" TextColor="Red"/>
 </StackLayout>
