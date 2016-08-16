@@ -121,6 +121,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderer\XamarinCellRenderer.cs" />
     <Compile Include="Renderer\FlowListViewInternalCellRenderer.cs" />
+    <Compile Include="TextMeterImplementation.iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />

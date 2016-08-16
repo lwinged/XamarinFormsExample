@@ -3,7 +3,8 @@
 		HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 	<ContentView.Content>
 		<StackLayout BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-			<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+			<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red" HeightRequest="{Binding Age}" FontSize="20" />
+			<Button Text="Expand" HeightRequest="30" Clicked="Expand_Clicked" />
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

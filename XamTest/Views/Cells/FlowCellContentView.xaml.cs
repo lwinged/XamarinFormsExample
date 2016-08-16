@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 
@@ -13,6 +14,16 @@ namespace XamTest
 
 		public void OnTapped()
 		{
+
+		}
+
+		public void Expand_Clicked(object sender, EventArgs e)
+		{
+			Debug.WriteLine("Clicked");
+			/*var person = (Person)this.BindingContext;
+			person.Name = "New person name";
+			person.Age = 3;*/
+
 
 		}
 
