@@ -4,11 +4,12 @@ using Xamarin.Forms;
 
 namespace XamTest
 {
-	public partial class XamarinCellContentView : ContentView
+	public partial class XamarinStackView : StackLayout
 	{
-		public XamarinCellContentView()
+		public XamarinStackView()
 		{
 			InitializeComponent();
+			btn.BackgroundColor = Color.Fuchsia;
 		}
 	}
 }

@@ -20,12 +20,15 @@ namespace XamTest
 				new Person { Age = 1, Name = "t6u"}
 			};
 
+			//prepare view Model
+
 			mylistview.ItemsSource = list;
-			mylistview.ItemTemplate = new DataTemplate(typeof(XamarinCell));
+			mylistview.ItemTemplate = new DataTemplate(typeof(XamarinViewCell));
 
 			var i = 0;
 			mylistview.ItemTapped += (sender, e) => {
 				var person = e.Item as Person;
+
 
 				if (i % 2 == 0)
 					person.Name = lorem;
@@ -34,8 +37,9 @@ namespace XamTest
 
 				++i;
 
-
-				//mylistview.ItemTemplate = new DataTemplate(typeof(XamarinCell));
+				//list[3] = new Person { Age = person.Age, Name = person.Name};
+				//mylistview.ItemsSource = list;
+				//mylistview.ItemTemplate = new DataTemplate(typeof(XamarinViewCell));
 
 			};
 
